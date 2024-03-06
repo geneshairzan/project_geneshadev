@@ -5,17 +5,16 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  server: { https: true, port: 3000 },
+  server: { https: true, port: 3001 },
   plugins: [react(), mkcert()],
   resolve: {
     alias: {
-      "@lib": path.resolve(__dirname, "../lib"),
-      "@pages": path.resolve(__dirname, "./src/pages"),
+      "@": path.resolve(__dirname, "./src"),
       "@component": path.resolve(__dirname, "./src/component"),
-      // "@gh": path.resolve(__dirname, "./src/component/gh"),
-      // "@img": path.resolve(__dirname, "./src/assets/img"),
-      // "@pages": path.resolve(__dirname, "./src/pages"),
-      // "@context": path.resolve(__dirname, "./src/component/context"),
+      "@gh": path.resolve(__dirname, "./src/component/gh"),
+      "@img": path.resolve(__dirname, "./src/assets/img"),
+      "@pages": path.resolve(__dirname, "./src/pages"),
+      "@context": path.resolve(__dirname, "./src/component/context"),
     },
   },
 });
